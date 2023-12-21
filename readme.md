@@ -10,7 +10,7 @@
 - ssd1306
 - joy-stick
 ### Diagram
-![Diagram of the game console setup](img\diagram\diagram_wokwi.png)
+![Diagram of the game console setup](img\diagram\diagram_woki.png)
 ### Lib
 - U8g2
 - Adafruit SSD1306
