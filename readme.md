@@ -35,12 +35,12 @@ A bird is running
 ![Album](img/5_album/album2.png)
 For more image, check [album folder](img/5_album/)
 ## System structure
-[main.ino](main/main.ino):  control main stream, display menu bar, and display application when user select
-[setup.h](main/setup.h): save enviroment variable of this project
-[nano_bird.h](main/nano_bird.h): flappy bird game, save byte file of this game
-[animation.h](main/animation.h): save byte of animation screen
-[nake.h](main/snake.h): snake game controller
-[icon.h](main/icon.h): save icon and album image
+- [main.ino](main/main.ino):  control main stream, display menu bar, and display application when user select
+- [setup.h](main/setup.h): save enviroment variable of this project
+- [nano_bird.h](main/nano_bird.h): flappy bird game, save byte file of this game
+- [animation.h](main/animation.h): save byte of animation screen
+- [nake.h](main/snake.h): snake game controller
+- [icon.h](main/icon.h): save icon and album image
 ## Flow
 ![Flow](img/menu/flow.png)
 ## Scalability
