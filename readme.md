@@ -41,6 +41,8 @@ For more image, check [album folder](img/5_album/)
 [animation.h](main\animation.h): save byte of animation screen
 [nake.h](main\snake.h): snake game controller
 [icon.h](main\icon.h): save icon and album image
+## Flow
+![Flow](img\menu\flow.png)
 ## Scalability
 - Increase number of `NUM_ITEM` and add to `menu_item` in [setup.h](main\setup.h)
 - Add new scenario in [main.ino](main\main.ino) if the `item_selected == New_item`
