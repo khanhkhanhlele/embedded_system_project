@@ -34,3 +34,14 @@ A bird is running
 ### Ablum
 ![Album](img/5_album/album2.png)
 For more image, check [album folder](img/5_album/)
+## System structure
+[main.ino](main\main.ino):  control main stream, display menu bar, and display application when user select
+[setup.h](main\setup.h): save enviroment variable of this project
+[nano_bird.h](main\nano_bird.h): flappy bird game, save byte file of this game
+[animation.h](main\animation.h): save byte of animation screen
+[nake.h](main\snake.h): snake game controller
+[icon.h](main\icon.h): save icon and album image
+## Scalability
+- Increase number of `NUM_ITEM` and add to `menu_item` in [setup.h](main\setup.h)
+- Add new scenario in [main.ino](main\main.ino) if the `item_selected == New_item`
+- Add new `.h` file for this application
