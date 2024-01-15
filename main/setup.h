@@ -17,7 +17,7 @@ int game_on = 0;
 int album_item = 0;
 int num_album_item = 8;
 
-const int NUM_ITEMS = 5; // number of items in the list and also the number of screenshots and screenshots with QR codes (other screens)
+const int NUM_ITEMS = 6; // number of items in the list and also the number of screenshots and screenshots with QR codes (other screens)
 const int MAX_ITEM_LENGTH = 20; // maximum characters for the item name
 
 char menu_items [NUM_ITEMS] [MAX_ITEM_LENGTH] = {  // array with item names
@@ -25,6 +25,7 @@ char menu_items [NUM_ITEMS] [MAX_ITEM_LENGTH] = {  // array with item names
   { "Mr Tien" }, 
   { "flappy bird" }, 
   { "album"},
-  { "animation"}
- };
+  { "animation"},
+  {"Dino"}
+};
 

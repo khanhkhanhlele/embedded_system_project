@@ -6,6 +6,7 @@
 #include "U8g2lib.h"
 #include "setup.h"
 #include "animation.h"
+#include "dino.h"
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0); // [full framebuffer, size = 1024 bytes]
 
@@ -156,6 +157,87 @@ void nano_bird(){
     display.display();
     delay(GAME_SPEED);
 }
+
+// Main play function
+void playDino(){
+
+  int16_t tree_x=127;
+  int16_t tree1_x=195;
+  int tree_type = random(0,2);
+  int tree_type1 = random(0,2);
+
+  int16_t dino_y = DINO_INIT_Y;
+  int input_command;
+  int jump=0;
+
+  int score=0;
+  
+  for(;;){
+    display.clearDisplay();
+
+    if(up()){
+      Serial.println("Jump");
+      if(jump==0) jump=1;
+    }
+
+    if(jump==1){
+      dino_y--;
+      if(dino_y== (DINO_INIT_Y-JUMP_PIXEL)){
+        jump=2;
+        score++;
+      }
+    }
+    else if(jump==2){
+      dino_y++;
+      if(dino_y== DINO_INIT_Y){
+        jump=0; 
+      }
+    }
+
+    if(tree_x<= (DINO_INIT_X+DINO_WIDTH) && tree_x>= (DINO_INIT_X+(DINO_WIDTH/2))){
+//      Serial.println("Might be Collision Happend");
+      if(dino_y>=(DINO_INIT_Y-3)){
+        // Collision Happened
+        Serial.println("Collision Happend");
+        break;
+      }    
+    }
+
+    if(tree1_x<= (DINO_INIT_X+DINO_WIDTH) && tree1_x>= (DINO_INIT_X+(DINO_WIDTH/2))){
+//      Serial.println("Might be Collision Happend");
+      if(dino_y>=(DINO_INIT_Y-3)){
+        // Collision Happened
+        Serial.println("Collision Happend");
+        break;
+      }    
+    }
+
+    displayScore(score);
+    moveTree(&tree_x,tree_type);
+    moveTree(&tree1_x,tree_type1);
+    moveDino(&dino_y);
+    display.drawLine(0, 54, 127, 54, SSD1306_WHITE);
+    
+
+    tree_x--;
+    tree1_x--;
+    if(tree_x==0) {
+      tree_x = 127;
+      tree_type = random(0,1);
+    }
+
+    if(tree1_x==0) {
+      tree1_x = 195;
+      tree_type1 = random(0,1);
+    }
+    display.display();
+  }
+
+  Serial.println("Game Over");
+  gameOver(score);
+  delay(5000);
+}
+
 void boldTextAtCenter(int y, String txt) {
   int x = display.width() / 2 - txt.length() * 3;
 
@@ -327,6 +409,13 @@ void loop() {
     }
     playAnimation (64,47,50,6,3,-64,128,-40,64,frames,sizeBytes, icon_animation);
     
+  }
+  else if (current_screen == 1 && item_selected == 5 ) {//dino game
+    u8g2.clearBuffer();  // clear buffer for storing display content in RAM
+    introMessage();
+    current_screen = 0;
+    // Run game in loop
+    playDino();
   }
     
 

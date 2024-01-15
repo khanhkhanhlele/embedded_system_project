@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/X1G6/OneDrive - Hanoi University of Science and Technology/20231/Hệ Nhúng/BTL/test",
-      "program": "c:/Users/X1G6/OneDrive - Hanoi University of Science and Technology/20231/Hệ Nhúng/BTL/test/build/Debug/outDebug",
+      "cwd": "c:/Users/X1G6/OneDrive - Hanoi University of Science and Technology/20231/Hệ Nhúng/embedded_system_project/main",
+      "program": "c:/Users/X1G6/OneDrive - Hanoi University of Science and Technology/20231/Hệ Nhúng/embedded_system_project/main/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
